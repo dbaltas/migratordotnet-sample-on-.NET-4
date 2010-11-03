@@ -1,0 +1,36 @@
+Using .Net Migrator 0.8 on .NET 4.0 with SQL Server
+
+A sample class library built in .NET 4.0, utilizing the power of .Net Migrator 
+for synchronizing database schema among multiple environments.
+
+Visual Studio 2010 was used for the build of the binaries to the 4.0 framework.
+
+This demo is fully functional to run from the command prompt.
+
+
+After compiling the library into migro.dll, 
+open a command line window (cmd) and go to the binaries folder where all required dlls and the console executable are located.
+
+
+The sample contains 4 migrations with version numbers 1, 2, 3 and 4.
+
+Run:
+Migrator.Console.exe SqlServer "Data Source=ZEUS;Database=playground;Integrated Security=True" ..\bin\debug\migro.dll
+where the arguments are
+1. database engine SqlServer (for other database engines more configuration and binaries might be required)
+2. the connection string
+3. the dll that includes the migrations
+
+This will create a SchemaInfo table in your target database where the identifier of the migrations is stored.
+
+To roll back you can go to a specific version by adding the -version [versionnumber]
+example: 
+Migrator.Console.exe SqlServer "Data Source=ZEUS;Database=playground;Integrated Security=True" ..\bin\debug\migro.dll -version 2
+
+
+USEFUL LINKS:
+migratordotnet HOME:
+http://code.google.com/p/migratordotnet/
+
+getting started guide:
+http://michielvoo.net/blog/configuring-migrator-net-as-an-external-tool-in-visual-studio-using-msbuild/

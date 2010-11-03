@@ -31,9 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Migrator.Framework, Version=0.9.0.26940, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Migrator.Framework, Version=0.0.0.0, Culture=neutral, PublicKeyToken=3b3586e9632ecfce, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Legos\migratordotnet-0.8.0\src\migratordotnet-read-only\src\Migrator.Console\bin\Migrator.Console\Debug\Migrator.Framework.dll</HintPath>
+      <HintPath>binaries\Migrator.Framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -49,6 +49,12 @@
     <Compile Include="004_AddAddressColumns.cs" />
     <Compile Include="003_LogEntry.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="binaries\Migrator.Console.exe" />
+    <Content Include="binaries\Migrator.dll" />
+    <Content Include="binaries\Migrator.Framework.dll" />
+    <Content Include="binaries\Migrator.Providers.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
